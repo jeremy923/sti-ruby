@@ -27,6 +27,7 @@ COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 COPY ./contrib/ /opt/app-root
 
 RUN chown -R 1001:0 /opt/app-root
+RUN echo "root:redhat" | chpasswd
 
 USER 1001
 
